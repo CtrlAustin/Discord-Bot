@@ -95,20 +95,21 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if random.randrange(1, 6):
+    if random.randrange(1, 6) < .5:
         if 'risk' in message.content:
             await message.channel.send('r-risk... like risk of rain!??!?!')
 
         if 'damn' in message.content:
             await say('damn fr 😔', message.channel)
+         
+        if 'kys' in message.content or 'kill yourself' in message.content:
+            await say('meanie, be nice, heres this if you need help~' + hotlines, message.channel)
+
     
     if deletejosholinks:
         if str(message.author.id) == joshotoken and 'http' in message.content:
             if random.random() < joshodeletechance:
                 await message.delete()
-    #
-    # if 'kys' in message.content or 'kill yourself' in message.content:
-    #     await say('meanie, be nice, heres this if you need help~' + hotlines, message.channel)
 
     if 'baka-chan' in message.content or 'baka chan' in message.content or message.content.endswith('~') or message.content.startswith('&') or botid in message.content:
         await parseCommand(message)
