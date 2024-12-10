@@ -95,7 +95,7 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    if random.randrange(1, 6) < .5:
+    if random.randrange(0, 6) < 1:
         if 'risk' in message.content:
             await message.channel.send('r-risk... like risk of rain!??!?!')
 
